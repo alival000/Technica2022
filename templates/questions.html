@@ -1,0 +1,19 @@
+<html>
+<head>
+</head>
+<body>
+  {% if data %}
+    <h1>Question {{data[0]}}</h1>
+
+  <form action='/NextQuestion/{{data[0]}}' method='POST'>
+    <label>{{data[1]}}</label><br><br>
+
+    {% for answer in data[2] %}
+      <input type="radio" name="answer" value="{{answer[0]}}">{{answer[1]}}<br><br>
+    {% endfor %}
+    <input type="submit" value="Next Question"/>
+  {% endif %}
+
+
+</body>
+</html>
