@@ -2,7 +2,7 @@
 
 html {
   /* The image used */
-  background-image: url("curtain.jpg");
+  background-image: url("../curtain.jpg");
 
   /* Full height */
   height: 100%;

@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html lang='en'>
-	<link rel="stylesheet" href="style.css">
+	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+
 	<head>
 		
 	</head>	
 	
 	<div class="tit"><center>
 		<div>Which</div>
-		<img src="logo4.jpg">
+		<img src="{{url_for('static', filename='logo4.jpg')}}">
 		<div>Embodies Your Spirit</div> 
 		<div>The Mostest?</div>
 	</div>
 	
 	<div>
 		<div style="float: left; width: 490px">.</div>
-		<div style="float: left; width: 100px"><img src= "left.jpg" alt="Troy points to button" class="troys"></div>
+		<div style="float: left; width: 100px"><img src= "{{url_for('static', filename='left.jpg')}}" alt="Troy points to button" class="troys"></div>
 		<a href= "page2.html">
 		<div style="float: left; width: 100px;"><button style="float:left; width:100px; width=50px"; class="startButton"; type="button">Start</button></div>
 		</a>
-		<div style="float: left; width: 400px"><img src= "right.jpg" alt="Troy points to button" class="troys"></div>
+		<div style="float: left; width: 400px"><img src= "{{url_for('static', filename='right.jpg')}}" alt="Troy points to button" class="troys"></div>
 	</div>
 
 	
