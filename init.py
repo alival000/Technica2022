@@ -15,7 +15,7 @@ questions_answers = {
         [["1", "You are into the classics and have a timeless look"], ["2", "You like to be different and stand out"],
          ["3", "You go for a more mature and refined look"]], False],
     4: [4, "What song makes you want to get up on stage and sing your heart out?",
-        [["1", "q4a.mp3"], ["2", "q4b.mp3"], ["3", "q4c.mp3"]], True],
+        [["1", "q4a.mp3"], ["2", "q4b.mp3"], ["3", "q4c.mp3"]], False],
     5: [5, "It's Friday Night and you are in your feels, what's going on?",
         [["1", "Your situationship has been talking smack behind your back"],
          ["2", "Your boyfriend has been getting a little too close to the girl you 'don't have to worry about'"],
@@ -56,11 +56,11 @@ def quiz_results():
     hsm3 = results[3]
 
     if hsm1 > hsm2 and hsm1 > hsm3:
-        return "hsm1 " + str(hsm1), 200
+        return render_template("results.html", result="High School Musical 1", image="hsm1.jpeg")
     elif hsm2 > hsm1 and hsm2 > hsm3:
-        return "hsm2 " + str(hsm2), 200
+        return render_template("results.html", result="High School Musical 2", image="hsm2.jpg")
     else:
-        return "hsm3 "+ str(hsm3), 200
+        return render_template("results.html", result="High School Musical 3", image="hsm3.jfif")
 
 
 @app.route("/NextQuestion/<question_number>", methods=["GET", "POST"])
