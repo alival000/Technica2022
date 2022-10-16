@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
 
@@ -5,9 +6,10 @@
 </head>
 <body>
   {% if data %}
-    <h1 class="tit2">Question {{data[0]}}</h1>
+    <h1 class="tit2" style="color:yellow; font-size: 30pt; font-family: "Arial">Question {{data[0]}}</h1>
 
-  <form action='/NextQuestion/{{data[0]}}' method='POST'>
+	<div class="meep">
+  <form class="meep" action='/NextQuestion/{{data[0]}}' method='POST' style="color:yellow; font-size:25pt; font-family: "Arial">
     <label>{{data[1]}}</label><br><br>
 
     {% for answer in data[2] %}
@@ -16,6 +18,7 @@
     <input type="submit" value="Next Question"/>
   {% endif %}
   </form>
+	</div>
 
 
 </body>

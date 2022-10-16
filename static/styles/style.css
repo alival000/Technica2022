@@ -2,7 +2,7 @@
 
 html {
   /* The image used */
-  background-image: url("../curtain.jpg");
+  background-image: url("curtain.jpg");
 
   /* Full height */
   height: 100%;
@@ -51,5 +51,16 @@ html {
 .troys {
 	width: 100px;
 	height: 69px;
+}
+
+.tit2{
+	color: yellow;
+	font-size: 25pt;
+}
+
+.meep{
+	color:yellow;
+	font-size: 25pt;
+	font-family: "Arial";
 }
 
