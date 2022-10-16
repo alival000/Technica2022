@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for
+import random
 
 app = Flask(__name__)
 
@@ -6,13 +7,15 @@ app = Flask(__name__)
     {question number: [question number, question, [answer1, answer2, etc.]]}
 '''
 questions_answers = {
-    1: [1, "Which one of Zac Efron's eyes do you feel in your soul?", [["1", "q1a.png"], ["2", "q1b.png"], ["3", "q1c.png"]]],
+    1: [1, "Which one of Zac Efron's eyes do you feel in your soul?",
+        [["1", "q1a.png"], ["2", "q1b.png"], ["3", "q1c.png"]]],
     2: [2, "Which Vanessa Hudgens' outfit can you see yourself wearing in the halls of East High?",
-        [["1", "q2a.png"], ["2", "q2b.png"] , ["3", "q2c.png"]]],
+        [["1", "q2a.png"], ["2", "q2b.png"], ["3", "q2c.png"]]],
     3: [3, "How would you describe your style?",
         [["1", "You are into the classics and have a timeless look"], ["2", "You like to be different and stand out"],
          ["3", "You go for a more mature and refined look"]]],
-    4: [4, "What song makes you want to get up on stage and sing your heart out?", [["1", "q4a.mp3"], ["2", "q4b.mp3"], ["3", "q4c.mp3"]]],
+    4: [4, "What song makes you want to get up on stage and sing your heart out?",
+        [["1", "q4a.mp3"], ["2", "q4b.mp3"], ["3", "q4c.mp3"]]],
     5: [5, "It's Friday Night and you are in your feels, what's going on?",
         [["1", "Your situationship has been talking smack behind your back"],
          ["2", "Your boyfriend has been getting a little too close to the girl you 'don't have to worry about'"],
@@ -34,6 +37,7 @@ results = {
     3: 0
 }
 
+
 @app.route("/")
 def root():
     return render_template("page1.html")
@@ -41,19 +45,39 @@ def root():
 
 @app.route("/questions/<question_number>")
 def questions(question_number):
-    return render_template("questions.html", data = questions_answers[int(question_number)]);
+    random.shuffle(questions_answers[int(question_number)][2])
+    return render_template("questions.html", data=questions_answers[int(question_number)]);
+
+
+@app.route("/results")
+def quiz_results():
+    hsm1 = results[1]
+    hsm2 = results[2]
+    hsm3 = results[3]
+
+    if hsm1 > hsm2 and hsm1 > hsm3:
+        return "hsm1 " + str(hsm1), 200
+    elif hsm2 > hsm1 and hsm2 > hsm3:
+        return "hsm2 " + str(hsm2), 200
+    else:
+        return "hsm3 "+ str(hsm3), 200
+
 
 @app.route("/NextQuestion/<question_number>", methods=["GET", "POST"])
 def question_counter(question_number):
     answer = request.form['answer'];
     results[int(answer)] += 1
     next_question_number = int(question_number) + 1
-    print(results)
-    return redirect(url_for('questions', question_number = next_question_number))
+    if next_question_number <= 10:
+        return redirect(url_for('questions', question_number=next_question_number))
+    else:
+        return redirect(url_for('quiz_results'))
+
 
 @app.route("/FirstQuestion", methods=["GET", "POST"])
 def first_question():
     return redirect(url_for('questions', question_number=1))
 
+
 if __name__ == '__main__':
-   app.run()
+    app.run()

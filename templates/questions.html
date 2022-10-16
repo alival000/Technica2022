@@ -13,7 +13,7 @@
     <label>{{data[1]}}</label><br><br>
 
     {% for answer in data[2] %}
-      <input type="radio" name="answer" value="{{answer[0]}}">{{answer[1]}}<br><br>
+      <input type="radio" name="answer" value="{{answer[0]}}" required>{{answer[1]}}<br><br>
     {% endfor %}
     <input type="submit" value="Next Question"/>
   {% endif %}
