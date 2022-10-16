@@ -24,7 +24,7 @@ questions_answers = {
         [["1", "Mountainside cabin"], ["2", "Desert getaway"], ["3", "California beach day"]]],
     7: [7, "What kind of song would you want Julliard Scholar Kelsi Nielson to write you?",
         [["1", "Inspirational ballad"], ["2", "Upbeat duet"], ["3", "Confession of love"]]],
-    8: [8, "Pick a Kardashian", [["1", "q8a,png"], ["2", "q8b.png"], ["3", "q8c.png"]]],
+    8: [8, "Pick a Kardashian/Jenner", [["1", "q8a,png"], ["2", "q8b.png"], ["3", "q8c.png"]]],
     9: [9, "Which quote ~inspires~ you?",
         [["1", "I come with my own background music"], ["2", "I majored in vacation"], ["3", "Worship Waffles"]]],
     10: [10, "What moment did you look forward to all of high school?",
@@ -56,11 +56,11 @@ def quiz_results():
     hsm3 = results[3]
 
     if hsm1 > hsm2 and hsm1 > hsm3:
-        return "hsm1 " + str(hsm1), 200
+        return render_template("results.html", result = "High School Musical 1", image = "hsm1.jpeg")
     elif hsm2 > hsm1 and hsm2 > hsm3:
-        return "hsm2 " + str(hsm2), 200
+        return render_template("results.html", result = "High School Musical 2", image = "hsm2.jpg")
     else:
-        return "hsm3 "+ str(hsm3), 200
+        return render_template("results.html", result = "High School Musical 3", image = "hsm3.jfif")
 
 
 @app.route("/NextQuestion/<question_number>", methods=["GET", "POST"])
