@@ -23,13 +23,8 @@ questions_answers = {
     6: [6, "Which location sounds like a dream vacation?",
         [["1", "Mountainside cabin"], ["2", "Desert getaway"], ["3", "California beach day"]], False],
     7: [7, "What kind of song would you want Julliard Scholar Kelsi Nielson to write you?",
-<<<<<<< HEAD
         [["1", "Inspirational ballad"], ["2", "Upbeat duet"], ["3", "Confession of love"]], False],
-    8: [8, "Pick a Kardashian/Jenner", [["1", "q8a,png"], ["2", "q8b.png"], ["3", "q8c.png"]], True],
-=======
-        [["1", "Inspirational ballad"], ["2", "Upbeat duet"], ["3", "Confession of love"]]],
-    8: [8, "Pick a Kardashian", [["1", "q8a.jpg"], ["2", "q8b.jpg"], ["3", "q8c.jpg"]]],
->>>>>>> 1bd3d2ffb6ff2d12e94df67c076232d0728be8f6
+    8: [8, "Pick a Kardashian/Jenner", [["1", "q8a,jpg"], ["2", "q8b.jpg"], ["3", "q8c.jpg"]], True],
     9: [9, "Which quote ~inspires~ you?",
         [["1", "I come with my own background music"], ["2", "I majored in vacation"], ["3", "Worship Waffles"]], False],
     10: [10, "What moment did you look forward to all of high school?",
