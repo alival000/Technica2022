@@ -13,7 +13,11 @@
     <label>{{data[1]}}</label><br><br>
 
     {% for answer in data[2] %}
-      <input type="radio" name="answer" value="{{answer[0]}}" required>{{answer[1]}}<br><br>
+        {% if data[3] %}
+            <input type="radio" name="answer" value="{{answer[0]}}" required><img src="{{url_for('static', filename=answer[1])}}" style="width: 200px;"><br><br>
+        {% else %}
+            <input type="radio" name="answer" value="{{answer[0]}}" required>{{answer[1]}}<br><br>
+        {% endif %}
     {% endfor %}
     <input type="submit" value="Next Question"/>
   {% endif %}
