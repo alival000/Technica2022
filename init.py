@@ -36,7 +36,7 @@ results = {
 
 @app.route("/")
 def root():
-    return "Welcome to the High School Musical Personality Quiz!"
+    return render_template("page1.html")
 
 
 @app.route("/questions/<question_number>")
