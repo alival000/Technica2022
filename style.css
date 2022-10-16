@@ -1,0 +1,55 @@
+
+
+html {
+  /* The image used */
+  background-image: url("curtain.jpg");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.tit {
+	top: 500px;
+	height: 50%;
+	font-size: 50px;
+	left: 100px;
+	color: yellow;
+	font-family: "Impact";
+	
+}
+
+.startButton {
+	height: 69px;
+	width: 100px;
+	font-size: 30px;
+}
+
+ .leftbox {
+    float:left; 
+    background:Red;
+    width:25%;
+    height:280px;
+}
+.middlebox{
+    float:left; 
+    background:Green;
+    width:50%;
+    height:280px;
+}
+.rightbox{
+    float:right;
+    background:blue;
+    width:25%;
+    height:280px;
+}
+
+.troys {
+	width: 100px;
+	height: 69px;
+}
+
