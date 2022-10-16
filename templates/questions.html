@@ -5,7 +5,7 @@
 </head>
 <body>
   {% if data %}
-    <h1>Question {{data[0]}}</h1>
+    <h1 class="tit2">Question {{data[0]}}</h1>
 
   <form action='/NextQuestion/{{data[0]}}' method='POST'>
     <label>{{data[1]}}</label><br><br>
