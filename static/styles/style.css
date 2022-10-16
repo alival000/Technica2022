@@ -2,7 +2,7 @@
 
 html {
   /* The image used */
-  background-image: url("../curtain.jpg");
+  background-image: url("curtain.jpg");
 
   /* Full height */
   height: 100%;
@@ -58,5 +58,15 @@ html {
   margin-left: auto;
   margin-right: auto;
   width: 20%;
+=======
+.tit2{
+	color: yellow;
+	font-size: 25pt;
+}
+
+.meep{
+	color:yellow;
+	font-size: 25pt;
+	font-family: "Arial";
 }
 
