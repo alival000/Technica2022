@@ -51,6 +51,9 @@ def question_counter(question_number):
     print(results)
     return redirect(url_for('questions', question_number = next_question_number))
 
+@app.route("/FirstQuestion", methods=["GET", "POST"])
+def first_question():
+    return redirect(url_for('questions', question_number=1))
 
 if __name__ == '__main__':
    app.run()
