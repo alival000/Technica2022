@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang='en'>
+	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+
+	<head>
+
+	</head>
+
+	<div class="tit"><center>
+		Results
+	</div><br>
+
+	<img src= "{{url_for('static', filename=image)}}" alt="movie poster" class="center"></br></br>
+
+	<div style="color: yellow; size: 20pt;"><center>You are... {{result}}!!!</div>
+
+
+
+</html>

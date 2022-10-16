@@ -1,8 +1,6 @@
-
-
 html {
   /* The image used */
-  background-image: url("curtain.jpg");
+  background-image: url("../curtain.jpg");
 
   /* Full height */
   height: 100%;
@@ -53,6 +51,12 @@ html {
 	height: 69px;
 }
 
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
+=======
 .tit2{
 	color: yellow;
 	font-size: 25pt;
